@@ -15,7 +15,6 @@ string longestPalindrome(string str){
             if(end<high-low+1){
                 ans = str.substr(low, high-low+1);
                 end = high-low+1;
-
             }
             low--; 
             high++;

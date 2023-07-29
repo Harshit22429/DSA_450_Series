@@ -1,33 +1,22 @@
 #include <iostream>
 #include <string>
+#include <vector>
 using namespace std;
 
 
 int main(){
 
-    string str="abc";
-    for (int i =0; i<str.length(); i++){
-        int start =i;
-        int end = str.length()-1;
-        // cout<<str[i]<<endl;
-        while(start<end){
-            if(str[start]==str[end]){
-                start++;
-                end--;
-            }
-            else{
-                break;
-            }
+    int arr[5]={2,2,3,5,5};
+    vector<int> ans;
+    for (int i=0; i<5; i++){
+        int temp = arr[i];
+        while(temp==arr[i+1]){
+            i++;
         }
-        if(start>=end){
-            if(i==str.length()-1){
-                cout<<"if complete last "<<"0"<<endl;
-            }
-            else{
+        ans.push_back(temp);
+    }
 
-            cout<<"if complete "<<i<<endl;
-            }
-        break;
-        }
+    for(int i=0; i<ans.size(); i++){
+        cout<<ans[i]<<" ";
     }
 }
